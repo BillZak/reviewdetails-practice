@@ -79,7 +79,7 @@ const HomePage = ({ navigation }) => {
           return (
             <TouchableOpacity
               key={item.id}
-              onPress={() => navigation.navigate("ReviewDetails")}
+              onPress={(params) => navigation.navigate("ReviewDetails", DATA)}
               style={styles.item}
             >
               <View style={styles.pinkbox}></View>
