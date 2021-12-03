@@ -5,7 +5,7 @@ import { Ionicons, Feather, Entypo, AntDesign } from "@expo/vector-icons";
 
 // create a component
 const ReviewDetailsPage = ({ route, navigation }) => {
-  const DATA = route.params;
+  const item = route.params;
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -45,13 +45,13 @@ const ReviewDetailsPage = ({ route, navigation }) => {
             height: 230,
             width: 310,
           }}
-          source={require("../../assets/1.jpeg")}
+          source={item.item.img}
         />
       </View>
       <View style={styles.imgview}></View>
       <View style={styles.titleview}>
         <Text style={{ fontSize: 20, margin: 20, fontWeight: "bold" }}>
-          Does Dry in January Improve Your Health?
+          {item.item.title}
         </Text>
         <View
           style={{
@@ -63,10 +63,12 @@ const ReviewDetailsPage = ({ route, navigation }) => {
         >
           <Image
             style={{ height: 25, width: 25, borderRadius: 50, marginRight: 10 }}
-            source={require("../../assets/p1.jpeg")}
+            source={item.item.nameimg}
           />
-          <Text>Bilal Zak</Text>
-          <Text style={{ color: "grey", marginLeft: 20 }}>. 4 min red</Text>
+          <Text>{item.item.name}</Text>
+          <Text style={{ color: "grey", marginLeft: 20 }}>
+            . {item.item.time}
+          </Text>
         </View>
       </View>
       <View style={styles.bodyview}>
