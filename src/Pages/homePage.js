@@ -72,14 +72,14 @@ const HomePage = ({ navigation }) => {
       <FlatList
         style={styles.flatlist}
         data={DATA}
-        keyExtractor={(item, index) => {
-          return index;
-        }}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => {
           return (
             <TouchableOpacity
               key={item.id}
-              onPress={(params) => navigation.navigate("ReviewDetails", DATA)}
+              onPress={(params) =>
+                navigation.navigate("ReviewDetails", { item: item })
+              }
               style={styles.item}
             >
               <View style={styles.pinkbox}></View>
